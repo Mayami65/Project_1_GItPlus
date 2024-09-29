@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Adjust the path to your style.css -->
+</head>
+<body>
+    <div id="sidebar-container"></div> <!-- Container for the sidebar -->
+    
+    <div class="main-content">
+
+        <h1>Team Members</h1>
+        <ul class="user-list">
+            <li>
+                <div class="user-icon">KB</div>
+                <span>Kelvin Banahene</span>
+            </li>
+            <li>
+                <div class="user-icon">AA</div>
+                <span>Andy Abeo</span>
+            </li>
+            <li>
+                <div class="user-icon">FL</div>
+                <span>Fajuyigbe Lois</span>
+            </li>
+            <li>
+                <div class="user-icon">D</div>
+                <span>Diana Prince</span>
+            </li>
+            <li>
+                <div class="user-icon">E</div>
+                <span>Edward Elric</span>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Load the sidebar HTML
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../../components/sideBar.html') // Adjust the path to your sidebar
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar-container').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+        });
+    </script>
+</body>
+</html>

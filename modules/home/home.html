@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMa2ZcRhiGJW6uD93e9RJoM7x6TPsGfuQRV6C0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
+</head>
+<body>
+
+    <div id="sidebar-container"></div> <!-- Container for the sidebar -->
+    
+  <div class="dashboard">
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Header (User Profile Only) -->
+      <header class="header">
+        <div class="user-profile">
+          <img src="/assests/images/user.webp" alt="User Image">
+          <span>User Name</span>
+        </div>
+      </header>
+
+      <!-- Widgets Section -->
+      <section class="widgets">
+        <div class="widget" id="revenueWidget">
+          <h3>Revenue</h3>
+          <p>$5,000</p>
+        </div>
+        <div class="widget" id="usersWidget">
+          <h3>New Users</h3>
+          <p>200</p>
+        </div>
+        <div class="widget" id="messagesWidget">
+          <h3>Messages</h3>
+          <p>50</p>
+        </div>
+      </section>
+
+      <!-- Charts Section -->
+      <section class="charts">
+        <div class="chart">
+          <h4>Revenue Growth</h4>
+          <canvas id="revenueChart"></canvas>
+        </div>
+        <div class="chart">
+          <h4>User Engagement</h4>
+          <canvas id="userChart"></canvas>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+  <script>
+    // Load the sidebar HTML
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('../../components/sideBar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading sidebar:', error));
+    });
+</script>
+  <script src="script.js"></script>
+</body>
+</html>
