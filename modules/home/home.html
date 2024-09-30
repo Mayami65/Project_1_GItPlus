@@ -11,6 +11,8 @@
 </head>
 <body>
 
+  <div id="navbar-container"></div> <!-- Container for the navbar -->
+
     <div id="sidebar-container"></div> <!-- Container for the sidebar -->
     
   <div class="dashboard">
@@ -64,6 +66,16 @@
                 document.getElementById('sidebar-container').innerHTML = data;
             })
             .catch(error => console.error('Error loading sidebar:', error));
+    });
+
+    // Load the navbar HTML
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('../../components/navBar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
     });
 </script>
   <script src="script.js"></script>
