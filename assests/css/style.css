@@ -62,6 +62,33 @@
   background-color: #34495E; /* Slightly lighter background on hover */
 }
 
+/* Position the logout button at the bottom */
+.logout {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.logout a {
+  color: #ECF0F1;
+  text-decoration: none;
+  font-size: 18px;
+  width: 215px;
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Add padding for better click area */
+  border-radius: 5px; /* Rounded corners for links */
+  transition: background 0.3s; /* Smooth background change */
+}
+
+.logout a i {
+  margin-right: 10px;
+}
+
+.logout a:hover {
+  background-color: #34495E; /* Slightly lighter background on hover */
+}
+
 /* Main Content */
 .main-content {
   flex-grow: 1;
