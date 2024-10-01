@@ -26,7 +26,7 @@ document.getElementById('registerForm').addEventListener('submit', function (e) 
         users.push(user);
         localStorage.setItem('users', JSON.stringify(users)); // Store updated user data
         alert('Account created successfully! You can now log in.');
-        window.location.href = '/auth/login.html'; // Redirect to login page
+        window.location.href = '/auth/login/login.html'; // Redirect to login page
     }
 });
 
