@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard project</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="regstyle.css">
 </head>
 <body>
     <div class="box">
@@ -27,9 +27,20 @@
                 <img src="assests/images/cube.png" alt="logo" class="cube">
             </div>
 
-            <h2>Hello again!</h2>
+            <h2>Create an account</h2>
 
             <form action="#" method="post" class="login-form">
+
+                <div class="input">
+                    <label for="fname">First name</label><br>
+                    <input type="text" id="fname" name="fname" required>
+                </div>
+
+                <div class="input">
+                    <label for="lname">Last name</label><br>
+                    <input type="text" id="lname" name="lname" required>
+                </div>
+
                 <div class="input">
                     <label for="email">Email address</label><br>
                     <input type="email" id="email" name="email" required>
@@ -44,12 +55,12 @@
                     <a href="#" class="forgot-password">Forgot password?</a>
                 </div> -->
 
-                <button type="submit" class="loginbtn">Login</button>
+                <button type="submit" class="loginbtn">Create my account</button>
               
             </form>
 
             <div class="register">
-                <p>Don't have an account?<a href="#">Register here</a></p>
+                <p>Already have a account? <a href="login.html">Login</a></p>
             </div>
           </div>
         </div>
