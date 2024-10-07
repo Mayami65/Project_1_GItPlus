@@ -1,102 +1,198 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* CRUD Module Layout */
-  .crud-module {
-    max-width: 600px;
-    margin: 70px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
-  /* User List */
-  #userList {
-    margin-top: 20px;
-  }
-  
-  .user-card {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .user-card div {
-    display: flex;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f7fa; /* Light gray background */
+}
+
+/* Sidebar Container */
+#sidebar-container {
+  width: 220px; /* Narrower sidebar width */
+  background-color: #2d3436;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Sidebar Header Styling */
+#sidebar-container h2 { /* Change this selector based on your actual header element */
+  color: #3498DB; /* Ensure the text is readable */
+  padding: 10px; /* Add some padding for better appearance */
+  text-align: center; /* Center the text */
+}
+
+
+/* Main Content Area */
+.main-content {
+  display: flex;
+  flex-grow: 1; /* Fill remaining space next to sidebar */
+  margin: 20px;
+  padding: 20px;
+}
+
+/* CRUD Containers (Form + Team Members) */
+.form-container,
+.team-members {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  margin: 0 10px; /* Space between containers */
+}
+
+/* Header Styling */
+h2, h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Form Styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px; /* Added margin to separate form groups */
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* User List */
+#userList {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #e1f5fe; /* Light blue background */
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.user-card div {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-card h4 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #333; /* Dark text color for contrast */
+  font-weight: bold;
+}
+
+.user-card p {
+  font-size: 0.9rem;
+  color: #555; /* Slightly darker text for better visibility */
+}
+
+.user-card .actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* Action Buttons in User Cards */
+button.edit, button.delete {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+button.edit {
+  background-color: #17a2b8; /* Edit button color */
+  color: white;
+}
+
+button.delete {
+  background-color: #dc3545; /* Delete button color */
+  color: white;
+}
+
+button.edit:hover {
+  background-color: #138496; /* Darker edit button on hover */
+}
+
+button.delete:hover {
+  background-color: #c82333; /* Darker delete button on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
     flex-direction: column;
+    padding: 10px; /* Less padding on smaller screens */
   }
-  
-  .user-card h4, .user-card p {
-    margin: 2px 0;
+
+  .form-container,
+  .team-members {
+    width: 100%;
+    margin: 0; /* Remove side margins on smaller screens */
   }
-  
-  .user-card .actions {
-    display: flex;
-    gap: 10px;
-  }
-  
-  button.edit, button.delete {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button.edit {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  button.delete {
-    background-color: #dc3545;
-    color: white;
-  }
-  
+}
